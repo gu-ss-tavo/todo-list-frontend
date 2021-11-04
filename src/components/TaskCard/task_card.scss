@@ -1,0 +1,101 @@
+@import '../../styles/vars.scss';
+
+.task-card {
+    // * first mobile
+    width: 90%;
+    height: 80vh;
+    margin: 5rem 0;
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    background: $c-primary;
+    border-radius: 1rem;
+    box-shadow: .2rem .3rem .5rem $c-shadow-primary;
+
+    overflow: hidden;
+    
+    @media screen and (min-width: 576px) {
+        width: 80%;
+    }
+    @media screen and (min-width: 768px) {
+        width: 70%;
+    }
+    @media screen and (min-width: 992px) {
+        width: 60%;
+        
+    }
+    @media screen and (min-width: 1200px) {
+        width: 50%;
+    }
+    @media screen and (min-width: 1400px) {
+        width: 40%;
+    }
+
+    // ? title
+    .task-card_title {
+        width: 100%;
+        background: $c-secondary;
+        position: relative;
+
+        color: white;
+        font-size: 4rem;
+
+        padding: 1rem 1.6rem;
+    }
+    // ? task count
+    .task-card_task-count {
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+
+        color: $c-contrast-primary;
+        font-size: 2rem;
+    }
+    // ? task form
+    .task-card-form {
+        width: 100%;
+
+        display: flex;
+        box-shadow: 0 .1rem .4rem $c-shadow-primary;
+
+        & > * {
+            padding: .8rem 1rem;
+            background: none;
+            border: none;
+
+            font-size: 1.8rem;
+        }
+        .form_input {
+            flex: 1;
+            outline: none;
+            background: $c-shadow-light-primary;
+            color: $c-dark;
+
+            &::placeholder {
+                color: $c-shadow-secondary;
+            }
+        }
+        .form_submit {
+            background: $c-ok;
+            color: white;
+            font-weight: 700;
+
+            cursor: pointer;
+            &:hover {
+                background-color: white;
+                color: $c-ok;
+            }
+        }
+    }
+    // ? task container
+    .task-card_task-container {
+        width: 100%;
+        margin-top: .6rem;
+        height: calc(100% - 10rem );
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}

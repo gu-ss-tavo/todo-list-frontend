@@ -1,0 +1,147 @@
+@import '../../../styles/vars.scss';
+
+.item-task-card {
+    padding: 1rem;
+    margin: 0 2rem;
+    border-bottom: .4rem solid $c-secondary;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    // ? completed
+    &.completed {
+        .item-task-card_title {
+            text-decoration: line-through;
+        }
+    }
+
+    // ? check
+    .item-task-card_check {
+        padding: .5rem;
+        margin-right: 1rem;
+
+        color: $c-contrast-primary;
+        font-size: 1.6rem;
+        font-weight: 700;
+
+        user-select: none;
+        cursor: pointer;
+        white-space: nowrap;
+        &:hover {
+            color: white;
+        }
+    }
+
+    // ? title
+    .item-task-card_title {
+        flex: 1;
+        color: $c-dark;
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    // ? options
+    .item-task-card_options {
+        button {
+            width: 3rem;
+
+            padding: .5rem;
+            margin-left: 1rem;
+            border: none;
+            border-radius: .5rem;
+
+            cursor: pointer;
+            
+            font-size: 1.6rem;
+            font-weight: 700;
+
+            transition: .1s;
+        }
+        .options_update {
+            background: $c-contrast-primary;
+            color:white;
+
+            &:hover {
+                background: white;
+                color: $c-contrast-primary;
+            }
+        }
+        .options_delete {
+            background: $c-err;
+            color:white;
+
+            &:hover {
+                background: white;
+                color: $c-err;
+            }
+        }
+    }
+    .item-task-card_edit {
+        display: none;
+
+        position: absolute;
+        z-index: 10;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: $c-primary;
+
+        & > * {
+            padding: .8rem;
+            font-size: 2rem;
+
+            background: none;
+            border: none;
+        }
+        
+        .edit-input {
+            flex: 1;
+            margin: 0 1rem;
+            
+            background: $c-shadow-light-secondary;
+            border-radius: 1rem;
+
+            color: $c-dark;
+            outline: none;
+        }
+        .edit-save {
+            background: $c-contrast-primary;
+            margin-right: 1rem;
+            border-radius: 1rem;
+
+            color:white;
+            cursor: pointer;
+            &:hover {
+                background: white;
+                color: $c-contrast-primary;
+            }
+        }
+        .edit-cancel {
+            background: $c-err;
+            border-radius: 1rem;
+
+            color:white;
+            cursor: pointer;
+
+            &:hover {
+                background: white;
+                color: $c-err;
+            }
+        }
+
+        &.active {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
