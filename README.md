@@ -2,6 +2,12 @@
 
 ---
 
+**Preview**
+- **( Versel )**
+https://todo-list-frontend-dusky.vercel.app/
+
+---
+
 **Start app**
 
 >`npm start`
